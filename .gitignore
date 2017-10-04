@@ -1,0 +1,16 @@
+.awcache
+.idea
+.vagrant
+.bundle
+
+*.log
+
+/build
+/vendor
+/bin
+/materials
+/dist
+
+node_modules
+npm-debug
+bower_components
