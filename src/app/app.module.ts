@@ -1,11 +1,10 @@
-require("style-loader!../assets/base.less");
 
 import {BrowserModule, HammerGestureConfig} from "@angular/platform-browser";
 import {NgRoutingModule} from "./ng-routing.module";
-import {AppComponent} from "./app.component";
+import {MessengerComponent} from "./modules/messenger/messenger.component";
 import {createInputTransfer, createNewHosts, removeNgStyles} from "@angularclass/hmr";
 import {ApplicationRef, NgModule} from "@angular/core";
-import {HomeModule} from "./modules/home/home.module";
+import {MessengerModule} from "./modules/messenger/messenger.module";
 
 
 export class MyHammerConfig extends HammerGestureConfig  {
@@ -16,17 +15,16 @@ export class MyHammerConfig extends HammerGestureConfig  {
 
 @NgModule({
     declarations: [
-        AppComponent,
     ],
     imports: [
         BrowserModule,
-        HomeModule,
-        NgRoutingModule
+        NgRoutingModule,
+        MessengerModule
     ],
     providers: [
     ],
     bootstrap: [
-        AppComponent
+        MessengerComponent
     ]
 })
 

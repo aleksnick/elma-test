@@ -6,7 +6,7 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-    @HostBinding('class') classes = 'app-component';
+    // @HostBinding('class') classes = 'app-component';
 
     constructor() {}
 
