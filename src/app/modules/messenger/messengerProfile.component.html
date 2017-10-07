@@ -1,2 +1,99 @@
 
-123
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-offset-2 col-lg-8">
+
+                <div class="row">
+
+                    <!-- users -->
+                    <div class="col-xs-6">
+
+                        <div class="row">
+                            <div *ngFor="let user of usersData" class="col-xs-12">
+
+                                <div class="widget themed-background-dark">
+                                    <div class="widget-simple">
+                                        <a routerLink="/user/{{user.id}}">
+                                            <img src="/img/placeholders/avatars/avatar12.jpg" alt="avatar" class="widget-image img-circle pull-left">
+                                        </a>
+                                        <h4 class="widget-content">
+                                            <a routerLink="/user/{{user.id}}" class="themed-color">
+                                                <strong>{{user.name}}</strong>
+                                            </a>
+                                            <small>{{user.job}}</small>
+                                        </h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- end users -->
+
+                    <!-- profile -->
+                    <div class="col-xs-6">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <div class="widget">
+                                    <div class="widget-simple">
+                                        <a href="page_ready_user_profile.html">
+                                            <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar" class="widget-image img-circle pull-right">
+                                        </a>
+                                        <h4 class="widget-content">
+                                            <a href="page_ready_user_profile.html">
+                                                <strong>{{selectedUser.name}}</strong>
+                                            </a>
+                                            <small>@kyleross</small>
+                                        </h4>
+                                    </div>
+                                    <div class="widget-extra themed-background-dark">
+                                        <div class="row text-center">
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3 class="widget-content-light">
+                                                    <a href="javascript:void(0)"><strong>590</strong></a><br>
+                                                    <small>Posts</small>
+                                                </h3>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3 class="widget-content-light">
+                                                    <a href="javascript:void(0)"><strong>260</strong></a><br>
+                                                    <small>Following</small>
+                                                </h3>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3 class="widget-content-light">
+                                                    <a href="javascript:void(0)"><strong>2.9k</strong></a><br>
+                                                    <small>Followers</small>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget-extra-full">
+                                        <form action="" method="post" class="form-horizontal" onsubmit="return false;">
+                                            <div class="form-group remove-margin-bottom">
+                                                <div class="col-xs-6 pull-right">
+                                                    <a routerLink="/user/{{selectedUser.id}}/im" class="btn btn-primary"><i class="fa fa-pencil"></i> Post</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- end profile -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+

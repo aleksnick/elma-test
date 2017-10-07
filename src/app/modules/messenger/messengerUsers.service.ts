@@ -1,10 +1,18 @@
+import { _ } from 'underscore';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 
 export class MessengerUsersService {
 
-    constructor() { }
+    constructor(){}
+    
+    getDataByUserId = function(id: number) {
+
+        var data = this.getDataFromServer();
+        return _.findWhere(data, {'id': id});
+
+    };
 
     getDataFromServer = function() {
         return [
@@ -46,8 +54,8 @@ export class MessengerUsersService {
             },
             {
                 id: 5,
-                name: 'Jacob',
-                age: 24,
+                name: 'Alex',
+                age: 18,
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
@@ -192,3 +200,5 @@ export class MessengerUsersService {
     };
 
 }
+
+

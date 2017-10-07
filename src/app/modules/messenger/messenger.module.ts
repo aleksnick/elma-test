@@ -6,6 +6,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {MessengerComponent} from "./messenger.component";
 import {MessengerProfileComponent} from "./messengerProfile.component";
 import {MessengerMainComponent} from "./messengerMain.component";
+import {MessengerChatComponent} from "./messengerChat.component";
 import {MessengerUsersService} from "./messengerUsers.service";
 
 
@@ -22,7 +23,8 @@ import {MessengerUsersService} from "./messengerUsers.service";
     declarations: [
         MessengerComponent,
         MessengerProfileComponent,
-        MessengerMainComponent
+        MessengerMainComponent,
+        MessengerChatComponent
     ],
     providers: [
         MessengerUsersService
