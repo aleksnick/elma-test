@@ -1,10 +1,42 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <div *ngFor="let user of usersData">
-                    <p>{{user.name}} : {{user.age}}</p>
+            <div class="col-xs-8 col-xs-offset-2">
+
+                <div *ngFor="let user of usersData" class="col-sm-6 col-md-4">
+
+                    <div class="widget">
+                        <div class="widget-advanced">
+
+                            <div class="widget-header text-center themed-background-dark">
+                                <h3 class="widget-content-light">
+                                    <a routerLink="/user/{{user.id}}" class="themed-color">{{user.name}}</a><br>
+                                    <small>{{user.job}}</small>
+                                </h3>
+                            </div>
+
+                            <div class="widget-main">
+                                <a routerLink="/user/{{user.id}}" class="widget-image-container animation-hatch">
+                                    <img src="/img/placeholders/avatars/avatar.jpg" alt="avatar" class="widget-image img-circle">
+                                </a>
+                                <div class="row text-center animation-fadeIn">
+                                    <div class="col-xs-4">
+                                        <h3><strong>{{user.followers}}</strong><br><small>Followers</small></h3>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3><strong>{{user.projects}}</strong><br><small>Projects</small></h3>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3><strong>{{user.sales}}</strong><br><small>Sales</small></h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
 
         </div>

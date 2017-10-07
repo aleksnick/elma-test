@@ -1,19 +1,29 @@
 
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {RouterModule, Routes} from "@angular/router";
 import {MessengerComponent} from "./messenger.component";
+import {MessengerProfileComponent} from "./messengerProfile.component";
+import {MessengerMainComponent} from "./messengerMain.component";
 import {MessengerUsersService} from "./messengerUsers.service";
+
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         CommonModule,
-        MessengerComponent
+        RouterModule,
+        MessengerComponent,
+        MessengerProfileComponent,
+        MessengerMainComponent
     ],
     declarations: [
-    MessengerComponent
+        MessengerComponent,
+        MessengerProfileComponent,
+        MessengerMainComponent
     ]
 })
 
