@@ -15,20 +15,13 @@ export class MessengerProfileComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private users: MessengerUsersService
-    ){
-
-        console.log('?????');
-    }
+    ){}
 
 
     ngOnInit() {
 
-        let id = this.route.snapshot.paramMap.get('id');
-
-
-        console.log('go!!!!!!!!!!!!', this.route.snapshot.paramMap.get('id'));
+        console.log('Start MessengerProfileComponent...', this.route.snapshot.paramMap.get('id'));
 
     }
-
 
 }   

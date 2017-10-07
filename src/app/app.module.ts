@@ -5,10 +5,6 @@ import {createInputTransfer, createNewHosts, removeNgStyles} from "@angularclass
 import {ApplicationRef, NgModule} from "@angular/core";
 import {MessengerModule} from "./modules/messenger/messenger.module";
 import {MessengerComponent} from "./modules/messenger/messenger.component";
-import {MessengerProfileComponent} from "./modules/messenger/messengerProfile.component";
-import {MessengerMainComponent} from "./modules/messenger/messengerMain.component";
-import {MessengerUsersService} from "./modules/messenger/messengerUsers.service";
-
 
 
 export class MyHammerConfig extends HammerGestureConfig  {
@@ -26,10 +22,9 @@ export class MyHammerConfig extends HammerGestureConfig  {
         MessengerModule
     ],
     providers: [
-        MessengerUsersService
     ],
     bootstrap: [
-        MessengerMainComponent
+    	MessengerComponent
     ]
 })
 

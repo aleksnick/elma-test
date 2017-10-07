@@ -1,6 +1,7 @@
 
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {MessengerRoutingModule} from "./messengerRouting.module";
 import {RouterModule, Routes} from "@angular/router";
 import {MessengerComponent} from "./messenger.component";
 import {MessengerProfileComponent} from "./messengerProfile.component";
@@ -11,19 +12,20 @@ import {MessengerUsersService} from "./messengerUsers.service";
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        MessengerRoutingModule
     ],
     exports: [
         CommonModule,
-        RouterModule,
-        MessengerComponent,
-        MessengerProfileComponent,
-        MessengerMainComponent
+        RouterModule
     ],
     declarations: [
         MessengerComponent,
         MessengerProfileComponent,
         MessengerMainComponent
+    ],
+    providers: [
+        MessengerUsersService
     ]
 })
 
