@@ -2,6 +2,7 @@
 import {Component, OnInit} from "@angular/core";
 import {MessengerUsersService} from "./messengerUsers.service";
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
 
 @Component({
@@ -11,19 +12,31 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 export class MessengerChatComponent implements OnInit {  
 
+    private subscription: Subscription;
+
     constructor(
         private route: ActivatedRoute,
         private router: Router,
         private users: MessengerUsersService
-    ){}
+    ){
+        this.subscription = route.params.subscribe(params => {
+            this.selectedId = Number.parseInt(params['id']);
+            this.selectedUser = this.users.getDataByUserId(this.selectedId);
+            console.log('***', this.selectedId);
+        });
+        console.log('subscription', this.selectedId);    	
+    }
 
     usersData = [];
+    selectedUser = {};
+    selectedId: number = 0;
 
     ngOnInit() {
 
-        this.usersData = this.users.getDataFromServer();
+        this.selectedId = Number.parseInt(this.route.snapshot.paramMap.get('id'));
+        this.selectedUser = this.users.getDataByUserId(this.selectedId);
 
-        console.log('Start MessengerChatComponent...', this.route.snapshot.paramMap.get('id'));
+        this.usersData = this.users.getDataFromServer();
 
     }
 

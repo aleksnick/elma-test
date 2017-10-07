@@ -15,5 +15,16 @@ gulp.task('concat-css', function() {
     .pipe(gulp.dest('src/assets/'));
 });
 
+gulp.task('concat-js', function() {
+  return gulp.src([
+      'src/js/jquery/jquery.min.js',
+      'src/js/bootstrap/bootstrap.min.js',
+      'src/js/plugins/plugins.js',
+      'src/js/chat/chat.js'
+    ])
+    .pipe(concat('theme.js'))
+    .pipe(gulp.dest('src/assets/'));
+});
 
-gulp.task('default', ['concat-css']);
+
+gulp.task('default', ['concat-css', 'concat-js']);

@@ -3,8 +3,7 @@ import {Component, OnInit} from "@angular/core";
 import {MessengerUsersService} from "./messengerUsers.service";
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-// import {Observable} from 'rxjs/Observable';
-// import 'rxjs/add/operator/switchMap';
+
 
 @Component({
     selector: 'messenger-profile',
