@@ -2,7 +2,7 @@
 
 
 window.readyChat = function() {
-    var chatHeight          = 600; // Default chat container height in large screens
+    var chatHeight          = 550; // Default chat container height in large screens
     var chatHeightSmall     = 300; // Default chat components (talk & people) height in small screens
 
     /* Cache some often used variables */
@@ -111,10 +111,7 @@ window.readyChat = function() {
     };
 }();
 
-$(function(){
-    setTimeout(function() {
-        console.log('chat');
-        window.readyChat.init(); 
-    }, 1000);
+$(document).ready(function() {
+    window.readyChat.init(); 
 });
 

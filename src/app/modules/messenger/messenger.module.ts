@@ -8,6 +8,7 @@ import {MessengerProfileComponent} from "./messengerProfile.component";
 import {MessengerMainComponent} from "./messengerMain.component";
 import {MessengerChatComponent} from "./messengerChat.component";
 import {MessengerUsersService} from "./messengerUsers.service";
+import {MessengerUsersDetailService} from "./messengerUsersDetail.service";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MessengerUsersService} from "./messengerUsers.service";
         MessengerChatComponent
     ],
     providers: [
-        MessengerUsersService
+        MessengerUsersService,
+        MessengerUsersDetailService
     ]
 })
 

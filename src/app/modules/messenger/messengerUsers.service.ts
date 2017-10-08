@@ -14,6 +14,13 @@ export class MessengerUsersService {
 
     };
 
+    getDataByUserStatus = function(status: string) {
+
+        var data = this.getDataFromServer();
+        return _.where(data, {'status': status});
+
+    }
+
     getDataFromServer = function() {
         return [
             {
@@ -23,7 +30,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 12,
-                sales: 970
+                sales: 970,
+                status: 'busy'
             },
             {
                 id: 2,
@@ -32,7 +40,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 13,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 3,
@@ -41,7 +50,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 32,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 4,
@@ -50,7 +60,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 53,
-                sales: 970
+                sales: 970,
+                status: 'online'
             },
             {
                 id: 5,
@@ -59,7 +70,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
-                sales: 970
+                sales: 970,
+                status: 'online'
             },
             {
                 id: 6,
@@ -68,7 +80,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 54,
-                sales: 970
+                sales: 970,
+                status: 'online'
             },
             {
                 id: 7,
@@ -77,7 +90,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 43,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 8,
@@ -86,7 +100,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 54,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 9,
@@ -95,7 +110,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 10,
@@ -104,7 +120,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 54,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 11,
@@ -113,7 +130,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 12,
@@ -122,7 +140,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 54,
-                sales: 970
+                sales: 970,
+                status: 'away'
             },
             {
                 id: 13,
@@ -131,7 +150,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 14,
@@ -140,7 +160,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 54,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 15,
@@ -149,7 +170,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 23,
-                sales: 970
+                sales: 970,
+                status: 'busy'
             },
             {
                 id: 16,
@@ -158,7 +180,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 43,
-                sales: 970
+                sales: 970,
+                status: 'online'
             },
             {
                 id: 17,
@@ -167,7 +190,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 23,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 18,
@@ -176,7 +200,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 21,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 19,
@@ -185,7 +210,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 65,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             },
             {
                 id: 20,
@@ -194,7 +220,8 @@ export class MessengerUsersService {
                 job: 'Web Designer',
                 followers: 120,
                 projects: 34,
-                sales: 970
+                sales: 970,
+                status: 'offline'
             }
         ]
     };

@@ -7,7 +7,7 @@
                     <div class="col-xs-12">
                         <ul class="breadcrumb">
                             <li><a  routerLink="">Users</a></li>
-                            <li><a  routerLink="/user/{{selectedUser.id}}">{{selectedUser.name}}</a></li>
+                            <li><a  routerLink="/user/{{selectedUser.user_id}}">{{selectedUser.name}}</a></li>
                             <li><strong>Chat</strong></li>
                         </ul>
                     </div>
@@ -16,85 +16,71 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
+
+
                         <div class="block">
                             <!-- Title -->
                             <div class="block-title">
-                                <h2><i class="fa fa-pencil animation-pulse"></i> <strong>{{selectedUser.name}}</strong></h2>
+                                <h2><i class="fa fa-pencil animation-pulse"></i> <strong>{{selectedUser.nickname}}</strong></h2>
                             </div>
                             <!-- END Title -->
 
                             <!-- Content -->
-                            <div class="chatui-container block-content-full" style="height: 600px;">
+                            <div class="chatui-container block-content-full">
                                 <!-- People -->
-                                <div class="chatui-people themed-background-dark" style="height: 600px;">
-                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 600px;"><div class="chatui-people-scroll" style="height: 600px; overflow: hidden; width: auto;">
-                                        <!-- Online -->
+                                <div class="chatui-people themed-background-dark">
+                                    <div class="chatui-people-scroll">
+
                                         <h2 class="chatui-header"><i class="fa fa-circle text-success pull-right"></i><strong>Online</strong></h2>
                                         <div class="list-group">
-                                            <a href="javascript:void(0)" class="list-group-item active">
-                                                <span class="badge">2</span>
+                                            <a *ngFor="let user of usersOnline" routerLink="/user/{{user.id}}/im" routerLinkActive="active" class="list-group-item">
+                                                <span class="badge">{{user.name.length}}</span>
                                                 <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Shirley</strong> Wells</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <span class="badge">5</span>
-                                                <img src="img/placeholders/avatars/avatar9.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Craig</strong> West</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <span class="badge">1</span>
-                                                <img src="img/placeholders/avatars/avatar10.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Brenda</strong> Silva</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <img src="img/placeholders/avatars/avatar15.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>George</strong> Peterson</h5>
+                                                <h5 class="list-group-item-heading"><strong>{{user.name}}</strong> {{user.job}}</h5>
                                             </a>
                                         </div>
-                                        <!-- END Online -->
 
-                                        <!-- Away -->
                                         <hr>
+
                                         <h2 class="chatui-header"><i class="fa fa-circle text-warning pull-right"></i><strong>Away</strong></h2>
                                         <div class="list-group">
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <img src="img/placeholders/avatars/avatar4.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>John</strong> West</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <img src="img/placeholders/avatars/avatar16.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Matteo</strong> Galli</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <span class="badge">6</span>
-                                                <img src="img/placeholders/avatars/avatar8.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Dimitri</strong> Robin</h5>
+                                            <a *ngFor="let user of usersAway" routerLink="/user/{{user.id}}/im" routerLinkActive="active" class="list-group-item">
+                                                <span class="badge">{{user.name.length}}</span>
+                                                <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle">
+                                                <h5 class="list-group-item-heading"><strong>{{user.name}}</strong> {{user.job}}</h5>
                                             </a>
                                         </div>
-                                        <!-- END Away -->
 
-                                        <!-- Busy -->
                                         <hr>
+
                                         <h2 class="chatui-header"><i class="fa fa-circle text-danger pull-right"></i><strong>Busy</strong></h2>
                                         <div class="list-group">
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <img src="img/placeholders/avatars/avatar5.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Louis</strong> Peters</h5>
-                                            </a>
-                                            <a href="javascript:void(0)" class="list-group-item">
-                                                <span class="badge">4</span>
-                                                <img src="img/placeholders/avatars/avatar12.jpg" alt="Avatar" class="img-circle">
-                                                <h5 class="list-group-item-heading"><strong>Julia</strong> Warren</h5>
+                                            <a *ngFor="let user of usersBusy" routerLink="/user/{{user.id}}/im" routerLinkActive="active" class="list-group-item">
+                                                <span class="badge">{{user.name.length}}</span>
+                                                <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle">
+                                                <h5 class="list-group-item-heading"><strong>{{user.name}}</strong> {{user.job}}</h5>
                                             </a>
                                         </div>
-                                        <!-- END Busy -->
-                                    </div><div class="slimScrollBar" style="background: rgb(255, 255, 255); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 513.552px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+
+                                        <hr>
+
+                                        <h2 class="chatui-header"><i class="fa fa-circle text-default pull-right"></i><strong>Offline</strong></h2>
+                                        <div class="list-group">
+                                            <a *ngFor="let user of usersOffline" routerLink="/user/{{user.id}}/im" routerLinkActive="active" class="list-group-item">
+                                                <span class="badge">{{user.name.length}}</span>
+                                                <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle">
+                                                <h5 class="list-group-item-heading"><strong>{{user.name}}</strong> {{user.job}}</h5>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
                                 </div>
                                 <!-- END People -->
 
                                 <!-- Talk -->
-                                <div class="chatui-talk" style="height: 550px;">
-                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 550px;"><div class="chatui-talk-scroll" style="height: 550px; overflow: hidden; width: auto;">
+                                <div class="chatui-talk">
+                                    <div class="chatui-talk-scroll">
                                         <ul>
                                             <li class="text-center"><small>yesterday, 23:10</small></li>
                                             <li class="chatui-talk-msg">
@@ -108,13 +94,13 @@
                                                 <img src="img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar"> I'm fine, thanks!
                                             </li>
                                         </ul>
-                                    </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 550px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                    </div>
                                 </div>
                                 <!-- END Talk -->
 
                                 <!-- Input -->
                                 <div class="chatui-input">
-                                    <form action="page_ready_chat.html" onsubmit="return false;" method="post" class="form-horizontal form-control-borderless remove-margin">
+                                    <form action="page_ready_chat.html" method="post" class="form-horizontal form-control-borderless remove-margin">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
                                             <input type="text" id="chatui-message" name="chatui-message" class="form-control input-lg" placeholder="Type a message and hit enter..">
@@ -128,6 +114,10 @@
 
 
 
+
+
+
+
                     </div>
                 </div>
 
@@ -135,6 +125,7 @@
 
         </div>
     </div>
+
 
 
 

@@ -25,7 +25,7 @@
                                         <a routerLink="/user/{{user.id}}">
                                             <img src="/img/placeholders/avatars/avatar12.jpg" alt="avatar" class="widget-image img-circle pull-left">
                                         </a>
-                                        <h4 class="widget-content">
+                                        <h4 class="widget-content widget-content-light">
                                             <a routerLink="/user/{{user.id}}" class="themed-color">
                                                 <strong>{{user.name}}</strong>
                                             </a>
@@ -48,43 +48,68 @@
 
                                 <div class="widget">
                                     <div class="widget-simple">
-                                        <a href="page_ready_user_profile.html">
+                                        <a routerLink="/user/{{selectedUser.user_id}}">
                                             <img src="img/placeholders/avatars/avatar2.jpg" alt="avatar" class="widget-image img-circle pull-right">
                                         </a>
-                                        <h4 class="widget-content">
-                                            <a href="page_ready_user_profile.html">
-                                                <strong>{{selectedUser.name}}</strong>
-                                            </a>
-                                            <small>@kyleross</small>
+                                        <h2>
+                                            <a routerLink="/user/{{selectedUser.user_id}}"><strong>{{selectedUser.name}}</strong></a>
+                                            <small>{{selectedUser.nickname}}</small>
+                                        </h2>
+                                        <h4>
+                                            {{selectedUser.job}} / 
+                                            <strong>{{selectedUser.company}}</strong>
                                         </h4>
+                                        Age: {{selectedUser.age}}
                                     </div>
                                     <div class="widget-extra themed-background-dark">
                                         <div class="row text-center">
                                             <div class="col-xs-12 col-sm-4">
                                                 <h3 class="widget-content-light">
-                                                    <a href="javascript:void(0)"><strong>590</strong></a><br>
-                                                    <small>Posts</small>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.friends}}</strong></a><br>
+                                                    <small>Friends</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-12 col-sm-4">
                                                 <h3 class="widget-content-light">
-                                                    <a href="javascript:void(0)"><strong>260</strong></a><br>
-                                                    <small>Following</small>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.groups}}</strong></a><br>
+                                                    <small>Groups</small>
                                                 </h3>
                                             </div>
                                             <div class="col-xs-12 col-sm-4">
                                                 <h3 class="widget-content-light">
-                                                    <a href="javascript:void(0)"><strong>2.9k</strong></a><br>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.photos}}</strong></a><br>
+                                                    <small>Photos</small>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget-extra">
+                                        <div class="row text-center">
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.followers}}</strong></a><br>
                                                     <small>Followers</small>
+                                                </h3>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.projects}}</strong></a><br>
+                                                    <small>Projects</small>
+                                                </h3>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <h3>
+                                                    <a href="javascript:void(0)"><strong>{{selectedUser.sales}}</strong></a><br>
+                                                    <small>Sales</small>
                                                 </h3>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="widget-extra-full">
                                         <form action="" method="post" class="form-horizontal" onsubmit="return false;">
-                                            <div class="form-group remove-margin-bottom">
-                                                <div class="col-xs-6 pull-right">
-                                                    <a routerLink="/user/{{selectedUser.id}}/im" class="btn btn-primary"><i class="fa fa-pencil"></i> Post</a>
+                                            <div class="form-group remove-margin-bottom text-right">
+                                                <div class="col-xs-12">
+                                                    <a class="btn btn-block" href="/user/{{selectedUser.user_id}}/im" class="btn btn-primary"><i class="fa fa-pencil"></i> Write a message</a>
                                                 </div>
                                             </div>
                                         </form>

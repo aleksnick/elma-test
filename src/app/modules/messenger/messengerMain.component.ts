@@ -3,7 +3,7 @@ import {MessengerUsersService} from "./messengerUsers.service";
 
 
 @Component({
-    selector: 'messenger-main',
+    selector: 'app-messenger__main',
     templateUrl: 'messengerMain.component.html'
 })
 
