@@ -586,35 +586,35 @@ window.readyChat = function() {
                 });
 
             // When the chat message form is submitted
-            chatInput
-                .find('form')
-                .submit(function(e){
-                    // Get text from message input
-                    chatMsg = chatInput.find('#chatui-message').val();
+            // chatInput
+            //     .find('form')
+            //     .submit(function(e){
+            //         // Get text from message input
+            //         chatMsg = chatInput.find('#chatui-message').val();
 
-                    // If the user typed a message
-                    if (chatMsg) {
-                        // Add it to the message list
-                        chatTalk
-                            .find('ul')
-                            .append('<li class="chatui-talk-msg chatui-talk-msg-highlight themed-border animation-expandUp">'
-                                    + '<img src="img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar">'
-                                    + $('<div />').text(chatMsg).html()
-                                    + '</li>');
+            //         // If the user typed a message
+            //         if (chatMsg) {
+            //             // Add it to the message list
+            //             chatTalk
+            //                 .find('ul')
+            //                 .append('<li class="chatui-talk-msg chatui-talk-msg-highlight themed-border animation-expandUp">'
+            //                         + '<img src="img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar">'
+            //                         + $('<div />').text(chatMsg).html()
+            //                         + '</li>');
 
-                        // Scroll the message list to the bottom
-                        chatTalkScroll
-                            .animate({ scrollTop: chatTalkScroll[0].scrollHeight },150);
+            //             // Scroll the message list to the bottom
+            //             chatTalkScroll
+            //                 .animate({ scrollTop: chatTalkScroll[0].scrollHeight },150);
 
-                        // Reset the message input
-                        chatInput
-                            .find('#chatui-message')
-                            .val('');
-                    }
+            //             // Reset the message input
+            //             chatInput
+            //                 .find('#chatui-message')
+            //                 .val('');
+            //         }
 
-                    // Don't submit the message form
-                    e.preventDefault();
-                });
+            //         // Don't submit the message form
+            //         e.preventDefault();
+            //     });
         }
     };
 }();

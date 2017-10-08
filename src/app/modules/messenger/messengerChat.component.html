@@ -81,29 +81,48 @@
                                 <!-- Talk -->
                                 <div class="chatui-talk">
                                     <div class="chatui-talk-scroll">
+
                                         <ul>
-                                            <li class="text-center"><small>yesterday, 23:10</small></li>
-                                            <li class="chatui-talk-msg">
-                                                <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar"> Hey admin?
-                                            </li>
-                                            <li class="chatui-talk-msg">
-                                                <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar"> How are you?
-                                            </li>
-                                            <li class="text-center"><small>just now</small></li>
-                                            <li class="chatui-talk-msg chatui-talk-msg-highlight themed-border">
-                                                <img src="img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar"> I'm fine, thanks!
-                                            </li>
+
+                                            <div *ngFor="let history of chatData.history">
+                                                <li class="text-center"><small>{{history.date}}</small></li>
+
+                                                <div *ngFor="let message of history.messages">
+
+                                                    <div *ngIf="message.author == 'user'; then userBlock else meBlock"></div>
+                                                    
+                                                    <ng-template #userBlock>
+                                                        <li class="chatui-talk-msg">
+                                                            <img src="img/placeholders/avatars/avatar6.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar">{{message.msg}}
+                                                        </li>
+                                                    </ng-template>
+
+                                                    <ng-template #meBlock>
+                                                        <li class="chatui-talk-msg chatui-talk-msg-highlight themed-border 
+                                                        {{message.isNew ? 'animation-expandUp' : ''}}">
+                                                            <img src="img/placeholders/avatars/avatar2.jpg" alt="Avatar" class="img-circle chatui-talk-msg-avatar">{{message.msg}}
+                                                        </li>
+                                                    </ng-template>
+
+                                                    
+
+                                                </div>
+
+                                            </div>
+
+
                                         </ul>
+
                                     </div>
                                 </div>
                                 <!-- END Talk -->
 
                                 <!-- Input -->
                                 <div class="chatui-input">
-                                    <form action="page_ready_chat.html" method="post" class="form-horizontal form-control-borderless remove-margin">
+                                    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()" class="form-horizontal form-control-borderless remove-margin">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
-                                            <input type="text" id="chatui-message" name="chatui-message" class="form-control input-lg" placeholder="Type a message and hit enter..">
+                                            <input type="text" id="chatui-message" formControlName="message" ngModel name="chatui-message" class="form-control input-lg" placeholder="Type a message and hit enter..">
                                         </div>
                                     </form>
                                 </div>
