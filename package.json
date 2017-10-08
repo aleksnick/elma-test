@@ -61,7 +61,6 @@
     "prod": "npm run aot",
     "prodServer": "webpack-dev-server --config ./webpack.config.js",
     "clean": "rimraf ./dist",
-    "aot": "webpack",
-    "test": "karma start"
+    "aot": "webpack"
   }
 }
