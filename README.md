@@ -6,7 +6,7 @@ Test app with angular 4
 You need install:
 * [Node.js](https://nodejs.org) and [Npm](https://www.npmjs.com/)
 
-write in command line
+Write in command line
 ```bash
 git clone https://github.com/aleksnick/elma-test.git
 cd elma-test
@@ -14,7 +14,7 @@ npm install -g webpack webpack-dev-server rimraf
 npm install 
 npm run serve
 ```  
-Open in your browser '''http://localhost:9000/'''
+Open in your browser http://localhost:9000/
 
 ## Usage in virtualbox
 You need install: 
@@ -22,18 +22,18 @@ You need install:
 * [extension pack](http://download.virtualbox.org/virtualbox/5.0.40/Oracle_VM_VirtualBox_Extension_Pack-5.0.40-115130.vbox-extpack) 
 * [vagrant](https://www.vagrantup.com/)
 
-write in c:\Windows\System32\drivers\etc\hosts
+Write in c:\Windows\System32\drivers\etc\hosts
 ```
 127.0.0.1       elma.local
 ```  
 
-write in command line
+Write in command line
 ```bash
 git clone https://github.com/aleksnick/elma-test.git
 cd elma-test
 vagrant up
 ```  
-Open in your browser '''http://elma.local:9000/'''
+Open in your browser http://elma.local:9000/
 
 
 ## Screenshots

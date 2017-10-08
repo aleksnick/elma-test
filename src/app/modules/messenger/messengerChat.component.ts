@@ -1,7 +1,7 @@
 
 import { _ } from 'underscore';
 import {Component, OnInit, OnDestroy} from "@angular/core";
-import {NgForm, FormGroup, FormControl, Validators} from '@angular/forms';
+import {NgForm, NgModel, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {MessengerUsersService} from "./messengerUsers.service";
@@ -46,6 +46,7 @@ export class MessengerChatComponent implements OnInit, OnDestroy {
     usersOffline = [];
     selectedUser = {};
     selectedId: number = 0;
+    inputValue: string = '';
 
     isExistsJustNowBlock = function() {
         let res = 0;
@@ -101,8 +102,13 @@ export class MessengerChatComponent implements OnInit, OnDestroy {
     }
 
     submit(){
-        console.log(this.myForm.controls["message"].value);
+
         this.pushMessage(this.myForm.controls["message"].value);
+        this.inputValue = '';
+
+        eval(`
+            $(document).trigger('chatui__submit');
+        `);
     }
 
     ngOnDestroy() {

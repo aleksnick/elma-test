@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <ul class="breadcrumb">
-                            <li><a  routerLink="">Users</a></li>
+                            <li><a routerLink="">Users</a></li>
                             <li><strong>{{selectedUser.name}}</strong></li>
                         </ul>
                     </div>
@@ -22,11 +22,11 @@
 
                                 <div class="widget themed-background-dark">
                                     <div class="widget-simple">
-                                        <a routerLink="/user/{{user.id}}">
+                                        <a class="routerLinkUser" routerLink="/user/{{user.id}}">
                                             <img src="/img/placeholders/avatars/avatar12.jpg" alt="avatar" class="widget-image img-circle pull-left">
                                         </a>
                                         <h4 class="widget-content widget-content-light">
-                                            <a routerLink="/user/{{user.id}}" class="themed-color">
+                                            <a routerLink="/user/{{user.id}}" class="themed-color routerLinkUser">
                                                 <strong>{{user.name}}</strong>
                                             </a>
                                             <small>{{user.job}}</small>

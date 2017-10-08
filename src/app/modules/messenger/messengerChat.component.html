@@ -15,8 +15,6 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-                        
-
 
                         <div class="block">
                             <!-- Title -->
@@ -122,7 +120,7 @@
                                     <form [formGroup]="myForm" novalidate (ngSubmit)="submit()" class="form-horizontal form-control-borderless remove-margin">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-angle-right"></i></span>
-                                            <input type="text" id="chatui-message" formControlName="message" ngModel name="chatui-message" class="form-control input-lg" placeholder="Type a message and hit enter..">
+                                            <input type="text" [(ngModel)]="inputValue" id="chatui-message" formControlName="message" name="chatui-message" class="form-control input-lg" placeholder="Type a message and hit enter..">
                                         </div>
                                     </form>
                                 </div>
@@ -130,11 +128,6 @@
                             </div>
                             <!-- END Content -->
                         </div>
-
-
-
-
-
 
 
                     </div>
